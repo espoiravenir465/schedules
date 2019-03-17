@@ -24,7 +24,6 @@
 ・しおり一覧画面
 ・しおり作成画面
 ・しおり編集画面
-・イベント一覧画面
 ・イベント作成画面
 ・イベント編集画面
 ・ユーザ登録画面
@@ -35,10 +34,20 @@
 
 
 URL設計
+get/schedules/{ユーザID} しおり一覧を表示する
 get /schedules/create   しおり作成画面を表示する
-post /schedules/create   しおりを作成する
-get /scheduless/{しおりID}/events/create イベント作成画面を表示する
-post /scheduless/{しおりID}/events/create イベントを作成する
+post /schedules/create   しおりを作成処理を実行する
+get/schedules/edit しおりを編集する
+get/schedules/delete しおりを削除する
+get /schedules/{しおりID}/events/create イベント作成画面を表示する
+post /schedules/{しおりID}/events/create イベントを作成処理を実行する
+get/schedules/{しおりID}/events/edit イベントを編集する
+get/schedules/{しおりID}/events/delete イベントを削除する
+get/schedules/{しおりID}/{イベントID}/photos/create イベントの写真登録画面を表示
+post/schedules/{しおりID}/{イベントID}/photos/creste イベントの写真登録を実行する
+get/schedules/{しおりID}/{イベントID}/photos/edit イベントの写真を編集する
+get/schedules/{しおりID}/{イベントID}/phots/delete イベントの写真を削除する
+
 
 
 
