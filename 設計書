@@ -50,10 +50,10 @@ get/schedules/{ユーザID}/{しおりID}/{イベントID}/photos/create イベ�
 post/schedules/{ユーザID}/{しおりID}/{イベントID}/photos/creste イベントの写真登録を実行する
 get/schedules/{ユーザID}/{しおりID}/{イベントID}/{写真ID}/edit イベントの写真を編集する
 get/schedules/{ユーザID}/{しおりID}/{イベントID}/{写真ID}/delete イベントの写真を削除する
-get/schedules/{ユーザID}/{しおりID}/{イベントID}/{招待ユーザID}/comments/create 友達のコメント登録画面表示
-post/schedules/{しおりID}{イベントID}/{招待ユーザID}/comments/create 友達のコメント登録を実行する
-get/schedules/{しおりID}/{イベントID}/{招待ユーザID}/{コメントID}/edit 友達のコメント登録を編集する
-get/schedules/{しおりID}/{イベントID}/{招待ユーザID}/{コメントID}/delete 友達のコメント登録を削除する
+get/schedules/{招待ユーザID}/{しおりID}/{イベントID}/comments/create 友達のコメント登録画面表示
+post/schedules/{招待ユーザID}/{しおりID}/{イベントID}/comments/create 友達のコメント登録を実行する
+get/schedules/{招待ユーザID}/{しおりID}/{イベントID}/{コメントID}/edit 友達のコメント登録を編集する
+get/schedules/{招待ユーザID}/{しおりID}/{イベントID}/{コメントID}/delete 友達のコメント登録を削除する
 
 
 テーブル設計
@@ -65,6 +65,7 @@ get/schedules/{しおりID}/{イベントID}/{招待ユーザID}/{コメントID
 ・しおりテーブル
   しおりID
   しおりタイトル
+  イベントID
   所有ユーザID
   招待ユーザID1
   招待ユーザID2
