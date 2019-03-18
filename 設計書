@@ -2,6 +2,9 @@
 
 
 機能設計
+・しおりを作成できる
+・しおりを編集できる
+・しおりを削除できる
 ・イベントを登録できる
 ・イベントを編集できる
 ・イベントを削除できる
@@ -20,7 +23,7 @@
 
 
 
-画面設計<
+画面設計
 ・しおり一覧画面
 ・しおり作成画面
 ・しおり編集画面
@@ -35,27 +38,29 @@
 
 URL設計
 get/schedules/{ユーザID} しおり一覧を表示する
-get /schedules/create   しおり作成画面を表示する
-post /schedules/create   しおりを作成処理を実行する
-get/schedules/edit しおりを編集する
-get/schedules/delete しおりを削除する
-get /schedules/{しおりID}/events/create イベント作成画面を表示する
-post /schedules/{しおりID}/events/create イベントを作成処理を実行する
-get/schedules/{しおりID}/events/edit イベントを編集する
-get/schedules/{しおりID}/events/delete イベントを削除する
-get/schedules/{しおりID}/{イベントID}/photos/create イベントの写真登録画面を表示
-post/schedules/{しおりID}/{イベントID}/photos/creste イベントの写真登録を実行する
-get/schedules/{しおりID}/{イベントID}/photos/edit イベントの写真を編集する
-get/schedules/{しおりID}/{イベントID}/phots/delete イベントの写真を削除する
-
-
+get /schedules/{ユーザID}/create   しおり作成画面を表示する
+post /schedules/{ユーザID}/create   しおりを作成処理を実行する
+get/schedules/{ユーザID}/{しおりID}/edit しおりを編集する
+get/schedules/{ユーザID}/{しおりID}/delete しおりを削除する
+get /schedules/{ユーザID}/{しおりID}/events/create イベント作成画面を表示する
+post /schedules/{ユーザID}/{しおりID}/events/create イベントを作成処理を実行する
+get/schedules/{ユーザID}/{しおりID}/{イベントID}/edit イベントを編集する
+get/schedules/{ユーザID}/{しおりID}/{イベントID}/delete イベントを削除する
+get/schedules/{ユーザID}/{しおりID}/{イベントID}/photos/create イベントの写真登録画面を表示
+post/schedules/{ユーザID}/{しおりID}/{イベントID}/photos/creste イベントの写真登録を実行する
+get/schedules/{ユーザID}/{しおりID}/{イベントID}/{写真ID}/edit イベントの写真を編集する
+get/schedules/{ユーザID}/{しおりID}/{イベントID}/{写真ID}/delete イベントの写真を削除する
+get/schedules/{ユーザID}/{しおりID}/{イベントID}/{招待ユーザID}/comments/create 友達のコメント登録画面表示
+post/schedules/{しおりID}{イベントID}/{招待ユーザID}/comments/create 友達のコメント登録を実行する
+get/schedules/{しおりID}/{イベントID}/{招待ユーザID}/{コメントID}/edit 友達のコメント登録を編集する
+get/schedules/{しおりID}/{イベントID}/{招待ユーザID}/{コメントID}/delete 友達のコメント登録を削除する
 
 
 テーブル設計
 ・ユーザテーブル
 　ユーザID
   メールアドレス
-  ニックネーム<
+  ニックネーム
   パスワード  
 ・しおりテーブル
   しおりID
