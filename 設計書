@@ -34,6 +34,7 @@
 ・コメント登録画面
 ・コメント編集画面
 ・写真登録画面
+・写真編集画面
 
 
 URL設計
@@ -57,33 +58,41 @@ get/schedules/{招待ユーザID}/{しおりID}/{イベントID}/{コメントID
 
 
 テーブル設計
+
 ・ユーザテーブル
-　ユーザID
+　ユーザID　(user_id)/ SERIAL
   メールアドレス
   ニックネーム
   パスワード  
+  
 ・しおりテーブル
-  しおりID
-  しおりタイトル
-  イベントID
-  所有ユーザID
-  招待ユーザID1
+  しおりID (schedule_id) /SERIAL
+  しおりタイトル (title)/VARCHAR(20)
+  イベントID (event_id)/SERIAL
+  所有ユーザID (user_id) /SERIAL
+  招待ユーザID1 
   招待ユーザID2
   招待ユーザID3
   招待ユーザID4
   招待ユーザID5
+  
 ・イベントテーブル
-  イベントID
-  しおりID
-  イベント名
-  登録日時
+  イベントID (event_id)/SERIAL
+  しおりID (schedule_id)/SERIAL
+  イベント名 (event_title)/VARCHAR(20)
+  登録日時 (created_at)/TIMESTAMP
+
+  
 ・写真テーブル
-  写真ID
-  ファイル名
-  イベントID
-  登録日時
+  写真ID (photo_id)/SERIAL
+  ファイル名 
+  イベントID (event_id)/SERIAL
+  登録日時 (created_at)/TIMESTAMP
+
+  
 ・コメントテーブル
-  コメントID
-  イベントID
-  コメント
-  登録日時
+  コメントID (comment_id)/SERIAL
+  イベントID (event_id)/SERIAL
+  コメント (comment)/VARCHAR(100)
+  登録日時 (created_at)/TIMESTAMP
+
