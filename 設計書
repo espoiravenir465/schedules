@@ -24,13 +24,14 @@
 
 
 画面設計
+・ユーザ登録画面
+・ログイン画面
+・招待画面
 ・しおり一覧画面
 ・しおり作成画面
 ・しおり編集画面
 ・イベント作成画面
 ・イベント編集画面
-・ユーザ登録画面
-・招待画面
 ・コメント登録画面
 ・コメント編集画面
 ・写真登録画面
@@ -61,9 +62,9 @@ get/schedules/{招待ユーザID}/{しおりID}/{イベントID}/{コメントID
 
 ・ユーザテーブル
 　ユーザID　(user_id)/ SERIAL
-  メールアドレス
-  ニックネーム
-  パスワード  
+  メールアドレス(email)/VARCHAR(50)
+  ニックネーム　(nickname)/VARCHAR(20)
+  パスワード  (password)/CHAR(10)
   
 ・しおりテーブル
   しおりID (schedule_id) /SERIAL
@@ -79,13 +80,13 @@ get/schedules/{招待ユーザID}/{しおりID}/{イベントID}/{コメントID
 ・イベントテーブル
   イベントID (event_id)/SERIAL
   しおりID (schedule_id)/SERIAL
-  イベント名 (event_title)/VARCHAR(20)
+  イベント名 (event_title)/VARCHAR(50)
   登録日時 (created_at)/TIMESTAMP
 
   
 ・写真テーブル
   写真ID (photo_id)/SERIAL
-  ファイル名 
+  ファイル名 (file)/VARCHAR(50)
   イベントID (event_id)/SERIAL
   登録日時 (created_at)/TIMESTAMP
 
@@ -93,6 +94,6 @@ get/schedules/{招待ユーザID}/{しおりID}/{イベントID}/{コメントID
 ・コメントテーブル
   コメントID (comment_id)/SERIAL
   イベントID (event_id)/SERIAL
-  コメント (comment)/VARCHAR(100)
+  コメント (comment)/VARCHAR(255)
   登録日時 (created_at)/TIMESTAMP
 
