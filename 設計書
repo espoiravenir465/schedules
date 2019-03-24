@@ -74,7 +74,7 @@ get/schedules/{招待ユーザID}/{しおりID}/{イベントID}/{コメントID
 テーブル設計
 
 ・ユーザテーブル
-　ユーザID　(user_id)/ SERIAL
+　ユーザID　(owner_id)/ SERIAL
   メールアドレス(email)/VARCHAR(50)
   ニックネーム　(nickname)/VARCHAR(20)
   パスワード  (password)/CHAR(10)
