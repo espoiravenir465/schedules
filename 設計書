@@ -25,20 +25,33 @@
 
 画面設計
 ・ユーザ登録画面
+resources/views/users/create.blade.html
 ・ログイン画面
+resources/views/login.blade.html
 ・招待画面
+resources/views/invite.blade.html
 ・しおり一覧画面
+resources/views/schedules/index.blade.html
 ・しおり作成画面
+resources/views/schedules/create.blade.html
 ・しおり編集画面
+resources/views/schedules/edit.blade.html
 ・イベント作成画面
+resources/views/events/create.blade.html
 ・イベント編集画面
+resources/views/events/edit.blade.html
 ・コメント登録画面
+resources/views/comments/create.blade.html
 ・コメント編集画面
+resources/views/comments/edit.blade.html
 ・写真登録画面
+resources/views/photos/create.blade.html
 ・写真編集画面
 
 
 URL設計
+get/　ログインページを表示する
+post/ログイン処理を実行する
 get/schedules/{ユーザID} しおり一覧を表示する
 get /schedules/{ユーザID}/create   しおり作成画面を表示する
 post /schedules/{ユーザID}/create   しおりを作成処理を実行する
@@ -49,13 +62,13 @@ post /schedules/{ユーザID}/{しおりID}/events/create イベントを作成�
 get/schedules/{ユーザID}/{しおりID}/{イベントID}/edit イベントを編集する
 get/schedules/{ユーザID}/{しおりID}/{イベントID}/delete イベントを削除する
 get/schedules/{ユーザID}/{しおりID}/{イベントID}/photos/create イベントの写真登録画面を表示
-post/schedules/{ユーザID}/{しおりID}/{イベントID}/photos/creste イベントの写真登録を実行する
+post/schedules/{ユーザID}/{しおりID}/{イベントID}/photos/create イベントの写真登録を実行する
 get/schedules/{ユーザID}/{しおりID}/{イベントID}/{写真ID}/edit イベントの写真を編集する
 get/schedules/{ユーザID}/{しおりID}/{イベントID}/{写真ID}/delete イベントの写真を削除する
 get/schedules/{招待ユーザID}/{しおりID}/{イベントID}/comments/create 友達のコメント登録画面表示
 post/schedules/{招待ユーザID}/{しおりID}/{イベントID}/comments/create 友達のコメント登録を実行する
-get/schedules/{招待ユーザID}/{しおりID}/{イベントID}/{コメントID}/edit 友達のコメント登録を編集する
-get/schedules/{招待ユーザID}/{しおりID}/{イベントID}/{コメントID}/delete 友達のコメント登録を削除する
+get/schedules/{招待ユーザID}/{しおりID}/{イベントID}/{コメントID}/edit 友達のコメントを編集する
+get/schedules/{招待ユーザID}/{しおりID}/{イベントID}/{コメントID}/delete 友達のコメントを削除する
 
 
 テーブル設計
@@ -77,7 +90,7 @@ get/schedules/{招待ユーザID}/{しおりID}/{イベントID}/{コメントID
   招待ユーザID5
   
 ・イベントテーブル
-  イベントID (event_id)/SERIAL
+  イベントID (event_id)/INTEGER
   しおりID (schedule_id)/SERIAL
   イベント名 (event_title)/VARCHAR(50)
   登録日時 (created_at)/TIMESTAMP
@@ -92,7 +105,7 @@ get/schedules/{招待ユーザID}/{しおりID}/{イベントID}/{コメントID
   
 ・コメントテーブル
   コメントID (comment_id)/SERIAL
-  イベントID (event_id)/SERIAL
+  イベントID (event_id)/INTEGER
   コメント (comment)/VARCHAR(255)
   登録日時 (created_at)/TIMESTAMP
 
