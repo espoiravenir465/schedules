@@ -69,7 +69,6 @@ get/schedules/{招待ユーザID}/{しおりID}/{イベントID}/{コメントID
 ・しおりテーブル
   しおりID (schedule_id) /SERIAL
   しおりタイトル (title)/VARCHAR(20)
-  イベントID (event_id)/SERIAL
   所有ユーザID (user_id) /SERIAL
   招待ユーザID1 
   招待ユーザID2
