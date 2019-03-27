@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateEventsTable extends Migration
+class CreatePhotosTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,24 +13,22 @@ class CreateEventsTable extends Migration
      */
     public function up()
     {
-        Schema::create('events', function (Blueprint $table) {
+        Schema::create('photos', function (Blueprint $table) {
+            //写真ID (photo_id)/INTEGER
+            $table->integer('photo_id')->unsigned();
+            //ファイル名 (file)/VARCHAR(50)
+            $table->string('filename',50);
             //イベントID (event_id)/INTEGER
             $table->integer('event_id')->unsigned();
-            //しおりID (schedule_id)/SERIAL
-            $table->bigIncrements('schedule_id')->unsigned();
-            //イベント名 (event_title)/VARCHAR(50)
-            $table->string('event_title',50);
-            //登録日時 (created_at)/TIMESTAMP
             $table->timestamps();
             
             
             //外部キー
             $table->engine = 'InnoDB';
-             $table->foreign('schedule_id')
-                    ->references('schedule_id')
-                    ->on('schedules')
+             $table->foreign('event_id')
+                    ->references('event_id')
+                    ->on('events')
                     ->onDelete('cascade');
-
 
         });
     }
@@ -42,6 +40,6 @@ class CreateEventsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('events');
+        Schema::dropIfExists('photos');
     }
 }

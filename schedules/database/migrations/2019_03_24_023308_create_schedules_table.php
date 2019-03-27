@@ -18,8 +18,8 @@ class CreateSchedulesTable extends Migration
             $table->bigIncrements('schedule_id')->unsigned();
             //しおりタイトル (title)/VARCHAR(20)
             $table->string('title', 20);
-            //所有ユーザID (owner_id) /SERIAL
-            $table->integer('owner_id');
+            //所有ユーザID (owner_id) /INTEGER
+            $table->integer('owner_id')->unsigned();
             //招待ユーザID1 
             $table->string('invite_user_id_1')->default("");
             //招待ユーザID2

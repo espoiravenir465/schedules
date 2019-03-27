@@ -15,7 +15,7 @@ class CreateUsersTable extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             //所有ユーザID　(owner_id)/ SERIAL
-            $table->integer('owner_id');
+            $table->integer('owner_id')->unsigned();
             //メールアドレス(email)/VARCHAR
             $table->string('email')->unique();
             //ニックネーム　(nickname)/VARCHAR(20)
