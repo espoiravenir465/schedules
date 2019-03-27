@@ -15,11 +15,11 @@ class CreateSchedulesTable extends Migration
     {
         Schema::create('schedules', function (Blueprint $table) {
             //しおりID (schedule_id) /SERIAL
-            $table->bigIncrements('schedule_id')->unsigned();
+            $table->increments('schedule_id');
             //しおりタイトル (title)/VARCHAR(20)
             $table->string('title', 20);
             //所有ユーザID (owner_id) /INTEGER
-            $table->integer('owner_id')->unsigned();
+            $table->integer('owner_id');
             //招待ユーザID1 
             $table->string('invite_user_id_1')->default("");
             //招待ユーザID2

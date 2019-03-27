@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreatePhotosTable extends Migration
+class CreateCommentsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,18 +13,18 @@ class CreatePhotosTable extends Migration
      */
     public function up()
     {
-        Schema::create('photos', function (Blueprint $table) {
+        Schema::create('comments', function (Blueprint $table) {
+            //コメントID (comment_id)/SERIAL
+            $table->increments('comment_id')->unsigned();
             //イベントID (event_id)/INTEGER
-                $table->increments('event_id')->unsigned();
-             //しおりID (schedule_id)/SERIAL
-                 $table->integer('schedule_id')->unsigned();
-            //イベント名 (event_title)/VARCHAR(50)
-                 $table->string('event_title',50);
-            //登録日時 (created_at)/TIMESTAMP
-                $table->timestamps();
-
+            $table->integer('event_id')->unsigned();
+            //しおりID(schedule_id)/INTEGER
+            $table->integer('schedule_id')->unsigned();
+            //イベントタイトル(event_title)/VARCHAR(50)
+            $table->string('event_title',50);
+            //登録日時
+            $table->timestamps();
             
-
             //外部キー
              $table->engine = 'InnoDB';
              $table->foreign('schedule_id')
@@ -41,6 +41,6 @@ class CreatePhotosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('photos');
+        Schema::dropIfExists('comments');
     }
 }
