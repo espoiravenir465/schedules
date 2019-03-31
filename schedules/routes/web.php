@@ -11,7 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
 Route::get('/schedules/{id}', 'ScheduleController@index')->name('schedules.index');
+Route::get('/', 'HomeController@index')->name('home');
+Auth::routes();

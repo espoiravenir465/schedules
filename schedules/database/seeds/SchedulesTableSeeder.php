@@ -13,12 +13,14 @@ class SchedulesTableSeeder extends Seeder
      */
     public function run()
     {
+       $user = DB::table('users')->first();
+        
         $titles = ['GW沖縄旅行', '夏のハワイ旅行'];
 
         foreach ($titles as $title) {
             DB::table('schedules')->insert([
                 'title' => $title,
-                'owner_id' => 1,
+                'owner_id' => $user->id,
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now(),
             ]);

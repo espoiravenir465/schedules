@@ -1,24 +1,10 @@
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Schedule App</title>
-  <link rel="stylesheet" href="/css/styles.css">
-</head>
-<body>
-<header>
-  <nav class="my-navbar">
-    <a class="my-navbar-brand" href="/">Schedule App</a>
-  </nav>
-</header>
-<main>
+@extends('layout')
+
+@section('content')
   <div class="container">
-    <div class="center-block">
     <div class="row">
       <div class="col col-md-12">
-        <nav class="panel panel-primary">
+        <nav class="panel panel-default">
           <div class="panel-heading">スケジュール</div>
           <div class="panel-body">
             <a href="#" class="btn btn-default btn-block">
@@ -36,11 +22,8 @@
       </div>
       <div class="column col-md-8">
         <!-- ここにタスクが表示される -->
-      
       </div>
     </div>
-    </div>
   </div>
-</main>
-</body>
-</html>
+@endsection
+  

@@ -19,8 +19,8 @@ class CreateCommentsTable extends Migration
             //イベントID (event_id)/INTEGER
             $table->integer('event_id')->unsigned();
             
-            //イベントタイトル(event_title)/VARCHAR(50)
-            $table->string('event_title',50);
+            //コメント(comment)/VARCHAR(50)
+            $table->string('comment',50);
             //登録日時
             $table->timestamps();
             
