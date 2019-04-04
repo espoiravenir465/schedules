@@ -18,6 +18,10 @@ class CreateSchedulesTable extends Migration
             $table->increments('schedule_id');
             //しおりタイトル (title)/VARCHAR(20)
             $table->string('title', 20);
+            //行きの日付('go_date')/DATE
+            $table->date('go_date');
+            //帰りの日付('return_date')/DATE
+            $table->date('return_date');
             //所有ユーザID (owner_id) /INTEGER
             $table->integer('owner_id');
             //招待ユーザID1 

@@ -20,6 +20,8 @@ class CreateEventsTable extends Migration
             $table->integer('schedule_id')->unsigned();
             //イベント名 (event_title)/VARCHAR(50)
             $table->string('event_title',50);
+            //イベント時間('event_time')/TIME
+            $table->time('event_time');
             //登録日時 (created_at)/TIMESTAMP
             $table->timestamps();
             
