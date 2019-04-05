@@ -95,6 +95,7 @@ get/schedules/{招待ユーザID}/{しおりID}/{イベントID}/{コメントID
   イベントID (event_id)/INTEGER
   しおりID (schedule_id)/SERIAL
   イベント名 (event_title)/VARCHAR(50)
+  イベント日付(event_date)/DATE
   イベント時間(event_time)/TIME
   登録日時 (created_at)/TIMESTAMP
 
