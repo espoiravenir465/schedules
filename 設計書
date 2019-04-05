@@ -82,6 +82,8 @@ get/schedules/{招待ユーザID}/{しおりID}/{イベントID}/{コメントID
 ・しおりテーブル
   しおりID (schedule_id) /SERIAL
   しおりタイトル (title)/VARCHAR(20)
+  行き日付(go_date)/DATE
+  帰り日付(return_date)/DATE
   所有ユーザID (user_id) /SERIAL
   招待ユーザID1 
   招待ユーザID2
@@ -93,6 +95,7 @@ get/schedules/{招待ユーザID}/{しおりID}/{イベントID}/{コメントID
   イベントID (event_id)/INTEGER
   しおりID (schedule_id)/SERIAL
   イベント名 (event_title)/VARCHAR(50)
+  イベント時間(event_time)/TIME
   登録日時 (created_at)/TIMESTAMP
 
   
