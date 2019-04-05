@@ -24,6 +24,7 @@ $events = ['首里城見学'=>'10:00:00','沖縄そばランチ'=>'12:00:00'];
     DB::table('events')->insert([
    'schedule_id'=>1,
     'event_title'=>$event_title,
+    'event_date'=>'20190501',
     'event_time'=>$event_time,
     'created_at' => Carbon::now(),
     'updated_at' => Carbon::now(),
@@ -38,6 +39,7 @@ $events = ['ダイアモンドヘッド見学'=>'10:00:00','アラモアナセ�
    DB::table('events')->insert([
        'schedule_id'=>2,
         'event_title'=>$event_title,
+        'event_date'=>'20190811',
         'event_time'=>$event_time,
         'created_at' => Carbon::now(),
         'updated_at' => Carbon::now(),
