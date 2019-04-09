@@ -17,7 +17,7 @@ class SchedulesTableSeeder extends Seeder
         
          DB::table('schedules')->insert([
                 'title' => 'GW沖縄旅行',
-                'owner_id' => $user->id,
+                'user_id' => $user->id,
                 'go_date'=>'20190501',
                 'return_date'=>'20190505',
                 'created_at' => Carbon::now(),
@@ -27,7 +27,7 @@ class SchedulesTableSeeder extends Seeder
     
            DB::table('schedules')->insert([
                 'title' => '夏のハワイ旅行',
-                'owner_id' => $user->id,
+                'user_id' => $user->id,
                 'go_date'=>'20190810',
                 'return_date'=>'20190817',
                 'created_at' => Carbon::now(),

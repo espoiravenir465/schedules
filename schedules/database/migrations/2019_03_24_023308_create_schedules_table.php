@@ -22,8 +22,8 @@ class CreateSchedulesTable extends Migration
             $table->date('go_date');
             //帰りの日付('return_date')/DATE
             $table->date('return_date');
-            //所有ユーザID (owner_id) /INTEGER
-            $table->integer('owner_id');
+            //所有ユーザID (user_id) /INTEGER
+            $table->integer('user_id')->unsigned();
             //招待ユーザID1 
             $table->string('invite_user_id_1')->default("");
             //招待ユーザID2
@@ -37,6 +37,12 @@ class CreateSchedulesTable extends Migration
             //更新日
             $table->timestamps();
             
+            //外部キー
+            $table->engine = 'InnoDB';
+            $table->foreign('user_id')
+                  ->references('id')
+                  ->on('users')
+                  ->onDelete('cascade');
             
 
         });
