@@ -24,7 +24,27 @@ class CreateSchedule extends FormRequest
     public function rules()
     {
         return [
-            'title' => 'required',
+            'title' => 'required|max:100',
+            'go_date' => 'required|date|after_or_equal:today',
+            'return_date' => 'required|date|after_or_equal:today',
+
+
+        ];
+    }
+    public function attributes()
+    {
+        return [
+            'title' => 'タイトル',
+            'go_date' => '出発日',
+            'return_date'=>'帰宅日'
+        ];
+    }
+
+    public function messages()
+    {
+        return [
+            'due_date.after_or_equal' => ':attribute には今日以降の日付を入力してください。',
         ];
     }
 }
+

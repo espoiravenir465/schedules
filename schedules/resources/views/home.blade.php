@@ -10,7 +10,7 @@
           </div>
           <div class="panel-body">
             <div class="text-center">
-              <a href=# class="btn btn-primary">
+              <a href="{{ route('schedules.create') }}" class="btn btn-primary">
                 しおり作成ページへ
               </a>
             </div>

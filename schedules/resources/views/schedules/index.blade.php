@@ -34,7 +34,7 @@
           </tbody>
           </table>
         <div class="panel-footer">
-            <a href="{{ route('schedules.create') }} class="btn btn-default btn-block">
+            <a href="{{ route('schedules.create') }}" class="btn btn-default btn-block">
               スケジュールを追加する
             </a>
           </div>

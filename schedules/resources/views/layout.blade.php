@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>旅行日記作成アプリ</title>
+  
   @yield('styles')
   <link rel="stylesheet" href="/css/styles.css">
 </head>
@@ -31,6 +32,8 @@
 <main>
   @yield('content')
 </main>
+
+
 @if(Auth::check())
   <script>
     document.getElementById('logout').addEventListener('click', function(event) {

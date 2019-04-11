@@ -14,7 +14,7 @@
 Route::group(['middleware' => 'auth'], function() {
     Route::get('/schedules/{id}', 'ScheduleController@index')->name('schedules.index');
     Route::get('/', 'HomeController@index')->name('home');
-    Route::get('/schedules/create','ScheduleController@showCreateForm')->name('schedules.create');
-    Route::post('/schedules/create','ScheduleController@create');
+    Route::get('/schedule/create','ScheduleController@showCreateForm')->name('schedules.create');
+    Route::post('/schedule/create','ScheduleController@create');
 });
 Auth::routes();
