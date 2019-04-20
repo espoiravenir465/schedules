@@ -1,9 +1,14 @@
 @extends('layout')
 
 @section('content')
+@yield('s-styles')
+  <link rel="stylesheet" href="/css/schedules.css">
+
+
   <div class="container">
     <div class="row">
       <div class="col col-md-12">
+      <div class="panel-color">
         <nav class="panel panel-primary">
           <div class="panel-heading">スケジュール</div>
           
@@ -22,7 +27,7 @@
                 <th>
           
             
-              <a href="#" >
+              <a href={{ route('schedules.detail', ['id' => $schedule->schedule_id]) }} class="list-group-item" >
                 {{ $schedule->title }}
               </a>
           
@@ -33,12 +38,13 @@
           @endforeach
           </tbody>
           </table>
-        <div class="panel-footer">
-            <a href="{{ route('schedules.create') }}" class="btn btn-default btn-block">
-              スケジュールを追加する
+          <a class="btn" href="{{ route('schedules.create') }}" class="btn btn-default btn-block">
+
+              しおりを追加する
+
             </a>
-          </div>
         </nav>
+        </div>
       </div>
       <div class="column col-md-8">
         <!-- ここにタスクが表示される -->

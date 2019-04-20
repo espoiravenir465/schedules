@@ -1,6 +1,10 @@
 @extends('layout')
 
+
 @section('content')
+@yield('r-styles')
+  <link rel="stylesheet" href="/css/register.css">
+
   <div class="container">
     <div class="row">
       <div class="col col-md-offset-3 col-md-6">

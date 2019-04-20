@@ -19,13 +19,12 @@ class HomeController extends Controller
         if (is_null($schedule)) {
             return view('home');
         }
-        
-        // イベント一覧画面ができるまで、ここで強制的にホーム画面へ遷移させる
-        return view('home');
+       
 
-        // しおりがあればそのしおりのイベント一覧にリダイレクトする
-        return redirect()->route('events.index', [
-            'id' => $schedule->id,
+        // しおりがあればそのしおりのスケジュール一覧にリダイレクトする
+         $id= Auth::id();
+        return redirect()->route('schedules.index', [
+            'id'=>$id,
         ]);
     }
 }

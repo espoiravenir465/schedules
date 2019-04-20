@@ -1,0 +1,22 @@
+@import url('https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/bootflat/2.0.4/css/bootflat.min.css');
+
+
+body {
+    /* 画像ファイルの指定 */
+ background-image:url("../img/camera.jpg");
+ 
+
+ /* 画像を常に天地左右の中央に配置 */
+ background-position: center center;
+
+ /* 画像をタイル状に繰り返し表示しない */
+ background-repeat: no-repeat;
+
+ /* コンテンツの高さが画像の高さより大きい時、動かないように固定 */
+ background-attachment: fixed;
+
+ /* 表示するコンテナの大きさに基づいて、背景画像を調整 */
+ background-size: cover;
+  background-color: #f4f7f8;
+}

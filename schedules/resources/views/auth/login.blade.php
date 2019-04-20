@@ -1,6 +1,12 @@
 @extends('layout')
 
+
+
 @section('content')
+@yield('l-styles')
+  <link rel="stylesheet" href="/css/login.css">
+
+
   <div class="container">
     <div class="row">
       <div class="col col-md-offset-3 col-md-6">
@@ -29,10 +35,11 @@
               </div>
             </form>
           </div>
-        </nav>
+        
         <div class="text-center">
           <a href="{{ route('password.request') }}">パスワードの変更はこちらから</a>
         </div>
+        </nav>
       </div>
     </div>
   </div>

@@ -6,6 +6,8 @@
 @endsection
 
 @section('content')
+@yield('cr-styles')
+  <link rel="stylesheet" href="/css/create.css">
   <div class="container">
     <div class="row">
       <div class="col col-md-12">
@@ -49,6 +51,7 @@
     </div>
     </div>
     </div>
+    
 @endsection
 
 @section('scripts')

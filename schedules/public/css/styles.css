@@ -3,7 +3,7 @@
 
 body {
     /* 画像ファイルの指定 */
- background-image:url("../img/sea.jpg");
+ background-image:url("../img/direction.jpg");
  
 
  /* 画像を常に天地左右の中央に配置 */
@@ -60,3 +60,4 @@ a.my-navbar-item:hover {
 .form-control[readonly] {
   background-color: #fff;
 }
+

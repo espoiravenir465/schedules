@@ -22,6 +22,8 @@ class CreateEventsTable extends Migration
             $table->string('event_title',50);
             //イベント日付(event_date)/DATE
             $table->date('event_date');
+            //イベント開始日付(event_start_date)/DATE
+            $table->date('event_start_date');
             //イベント時間('event_time')/TIME
             $table->time('event_time');
             //登録日時 (created_at)/TIMESTAMP
