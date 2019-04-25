@@ -35,9 +35,9 @@ body {
 
 
 .table {
-   border: 2px solid; 
-   width: 100%; 
-　 table-layout: fixed;
+   border:2px solid; 
+   width: 100% !important; 
+　 table-layout: fixed !important;
    
 }
 
@@ -56,5 +56,9 @@ body {
 
 thead{
     background:rgba(255,245,204,0.6);
+}
+
+.table .a,.b,.c{
+    width: 200px !important;
 }
 

@@ -33,7 +33,7 @@ class CreateEventsTable extends Migration
             //外部キー
             $table->engine = 'InnoDB';
              $table->foreign('schedule_id')
-                    ->references('schedule_id')
+                    ->references('id')
                     ->on('schedules')
                     ->onDelete('cascade');
 

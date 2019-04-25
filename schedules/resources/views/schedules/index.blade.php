@@ -27,7 +27,7 @@
                 <th>
           
             
-              <a href={{ route('schedules.detail', ['id' => $schedule->schedule_id]) }} class="list-group-item" >
+              <a href={{ route('schedules.detail', ['id' => $schedule->id]) }} class="list-group-item" >
                 {{ $schedule->title }}
               </a>
           

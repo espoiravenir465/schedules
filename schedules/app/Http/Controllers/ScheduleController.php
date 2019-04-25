@@ -7,6 +7,7 @@ use App\Schedule;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\CreateSchedule;
 use App\Event;
+use Carbon\Carbon;
 
 
 
@@ -77,6 +78,7 @@ class ScheduleController extends Controller
 
         return view('schedules/detail', [
             'events' => $events,
+            'schedule_id' => $id,
             'event_start_date' => $event_start_date,
             'startym' => $startym,
             'startMonths' => $startMonths,
@@ -87,5 +89,52 @@ class ScheduleController extends Controller
         ]);
     }
     
+   
+    
+   public function createevent(int $id, Request $request)
+    {
+        DB::table('events')->where('schedule_id', $id)->delete();
+        //dd($request->request);
+        $columns = [0,1,2,3,4,5];
+        $hours = ["0:00","1:00","2:00","3:00","4:00","5:00","6:00","7:00","8:00","9:00","10:00","11:00","12:00","13:00","14:00","15:00","16:00","17:00","18:00","19:00","20:00","21:00","22:00","23:00"];
+        // 1日目から6日目まで繰り返す
+        foreach($columns as $column){
+          // 0:00から23:00まで繰り返す
+          foreach($hours as $hour){
+            $title="title".$column.$hour;
+            $current_schedule = Schedule::find($id);
+            $event = new Event();
+            $event->schedule_id = $id;
+            
+            $event->event_title = $request->$title;
+            if($event->event_title == null){
+                break;
+            }
+            if(strlen($request->startD)==1){
+                $d = "0".$request->startD;
+            }
+            else{
+                $d = $request->startD;
+            }
+            $event->event_start_date = new Carbon($request->startM.$d);
+            $day = $d + $column;
+            if(strlen($day)==1){
+                $day = "0".$day;
+            }
+            //dd($day);
+            $event->event_date = new Carbon($request->startM.$day);
+            $event->event_time = new Carbon($hour);
+    
+            $current_schedule->events()->save($event);
+        
+          }
+        }
+    
+        return redirect()->route('schedules.index', [
+            'id' => $id,
+        ]);
+    } 
 
+    
 }
+

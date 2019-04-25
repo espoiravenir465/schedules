@@ -14,8 +14,8 @@ class CreateSchedulesTable extends Migration
     public function up()
     {
         Schema::create('schedules', function (Blueprint $table) {
-            //しおりID (schedule_id) /SERIAL
-            $table->increments('schedule_id');
+            //しおりID (id) /SERIAL
+            $table->increments('id');
             //しおりタイトル (title)/VARCHAR(20)
             $table->string('title', 20);
             //行きの日付('go_date')/DATE
