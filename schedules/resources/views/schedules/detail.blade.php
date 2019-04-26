@@ -23,7 +23,7 @@ $testdate = new DateTime($event_start_date['event_start_date']);
     
     <form action="{{ route('schedules.detail',['id' => $schedule_id])}}" method="POST">
       @csrf
-      @method('DELETE') 
+      
       
     <div class="table-color" >
       <div class="top-table">
